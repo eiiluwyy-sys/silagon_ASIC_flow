@@ -1,8 +1,8 @@
 # Reexam Mapping Draft
 
-This file is a working map for explaining the project from one main directory:
+This file is a working map for explaining the project from one repository root:
 
-- main workspace: `SiLagoNN_main_project`
+- main workspace: repository root
 - supporting sources: `SilagoNN_1` and `SiLagoNN_2`
 - PPT reference: `project_presentation.pptx`
 
@@ -13,7 +13,7 @@ older runs.
 
 ## Overall judgment
 
-`SiLagoNN_main_project` is the best single folder for reexam preparation, but it is
+The current repository root is the best single workspace for reexam preparation, but it is
 already a merged workspace rather than one original author's untouched run.
 
 Current evidence suggests:
@@ -38,7 +38,7 @@ Current evidence suggests:
 
 Primary explanation folder:
 
-- `SiLagoNN_main_project/rtl`
+- `rtl/`
 
 Best scripts/files to explain:
 
@@ -64,7 +64,7 @@ Confidence:
 
 Primary script candidates:
 
-- `SiLagoNN_main_project/syn/scr/dc_flat.tcl`
+- `syn/scr/dc_flat.tcl`
 - `SilagoNN_1/SiLagoNN/syn/scr/dc_flat.tcl`
 - `SiLagoNN_2/Task4/Synthesis-of-the-DRRA-Fabric-main/SiLagoNN/syn/scr/dc_flat.tcl`
 
@@ -105,7 +105,7 @@ PPT table assessment for Task 2:
   - 6ns: power `34.4214`, area `389591`, slack `0.10`
 - Exact full four-point source set is not preserved in the current folders.
 - The 10ns pair `20.6254` + `359511` matches:
-  - `SiLagoNN_main_project/syn/rpt_10ns`
+  - `syn/rpt_10ns`
   - `SiLagoNN_2/Task4/.../syn/rpt_10ns`
 - The corresponding slack in those preserved reports is `57.47`, not `37.47`.
 - The 20ns/8ns/6ns values from the PPT do not match the preserved flat reports in
@@ -129,7 +129,7 @@ Confidence:
 
 Primary script candidates:
 
-- `SiLagoNN_main_project/syn/scr/dc_bottomup.tcl`
+- `syn/scr/dc_bottomup.tcl`
 - `SilagoNN_1/SiLagoNN/syn/scr/dc_bottomup.tcl`
 - `SiLagoNN_2/Task4/.../syn/scr/dc_bottomup.tcl`
 
@@ -170,7 +170,7 @@ Confidence:
 
 Primary script family:
 
-- `SiLagoNN_main_project/phy/scr/pnr_flat.tcl`
+- `phy/scr/pnr_flat.tcl`
 - `SilagoNN_1/SiLagoNN/phy/scr/pnr_flat.tcl`
 
 Relationship:
@@ -246,9 +246,9 @@ Relationship:
 
 Strong source evidence:
 
-- `main/Hierarchical Physical synthesis.png` is identical to
+- `assets/figures/Hierarchical Physical synthesis.png` is identical to
   `SilagoNN_1/SiLagoNN/phy/task6_Hierarchical Physical synthesis.png`
-- `main/Hierarchical Physical synthesis (2).png` is identical to
+- `assets/figures/Hierarchical Physical synthesis (2).png` is identical to
   `SilagoNN_1/SiLagoNN/phy/task6_Hierarchical Physical synthesis (2).png`
 
 Conclusion:

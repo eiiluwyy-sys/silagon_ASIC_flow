@@ -1,5 +1,5 @@
 # ModelSim / Questa simulation libraries (regenerable)
-SiLagoNN_main_project/rtl/work/
+rtl/work/
 **/rtl/work/
 
 # Waveform / transcript (local)
@@ -17,7 +17,14 @@ command.log
 **/command.log
 
 # Course reference PDFs (not part of design flow; keep locally if needed)
-SiLagoNN_main_project/related_lectures/
+references/related_lectures/
+
+# Common simulator scratch
+rtl/transcript
+rtl/vsim.wlf
+rtl/wlf
+rtl/dware/
+exe/
 
 # Editor / OS
 .DS_Store

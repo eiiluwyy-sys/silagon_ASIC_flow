@@ -34,7 +34,7 @@ echo "Clock Period: ${CLOCK_PERIOD}ns"
 echo "=========================================="
 
 if [ ! -f "rtl/drra_wrapper_hierarchy.txt" ] || [ ! -f "${TCL_SCRIPT}" ]; then
-    echo "Error: please run from SiLagoNN_main_project root."
+    echo "Error: please run from the repository root."
     exit 1
 fi
 

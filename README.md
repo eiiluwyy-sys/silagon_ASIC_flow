@@ -1,45 +1,83 @@
-# projectv1 — SiLagoNN ASIC/FPGA 设计流程展示
+# SiLagoNN ASIC Flow Portfolio
 
-面向求职与作品集展示的硬件设计仓库：覆盖 **RTL 仿真 → 逻辑综合（flat / bottom-up）→ 物理综合与相关脚本/报告**，体现从 RTL 到后端工具链的完整工程化能力。
+Portfolio-oriented ASIC/FPGA project repository centered on a SiLagoNN DRRA-based design flow. The repo is organized to let recruiters and interviewers understand the project in three passes:
 
-*English:* Portfolio-style ASIC/FPGA flow demo (RTL sim, DC synthesis variants, physical flow scripts, reports, and archived run artifacts).
+1. What the design is and what was achieved
+2. How the RTL, synthesis, and physical-design flows are organized
+3. Where the original evidence, reports, and archived course artifacts live
 
-## 亮点（便于简历 / 面试口述）
+## Project Snapshot
 
-- 可复现的脚本入口与流程索引（见下方 `FLOW_INDEX.md`）。
-- 保留典型 PPA 报告、证据映射与历史归档，便于说明设计决策与结果对比。
-- 工具链侧：Synopsys Design Compiler、物理相关 Tcl/脚本与目录约定清晰。
+- **Design scope:** VHDL RTL for a DRRA-style accelerator wrapper and supporting compute / memory tiles
+- **Flow scope:** RTL simulation, flat logic synthesis, bottom-up logic synthesis, and physical-synthesis evidence
+- **Tooling:** ModelSim / Questa-style simulation scripts, Synopsys Design Compiler Tcl flows, physical-design handoff artifacts
+- **Focus for interviews:** flow automation, synthesis tradeoff analysis, hierarchy-aware implementation, and evidence-backed reporting
 
-## 仓库结构
+## Key Results
 
-| 路径 | 说明 |
-|------|------|
-| `Project_2025_intro.pdf` | 项目背景与介绍材料（PDF） |
-| `SiLagoNN_main_project/` | 主工程：RTL、仿真、综合、物理脚本、数据与报告 |
+### Task 2: Flat Logic Synthesis
 
-**流程与任务入口（权威索引）：** `SiLagoNN_main_project/FLOW_INDEX.md`
+| Clock (ns) | Total Power (mW) | Total Cell Area (um^2) | Slack (ps) |
+| --- | ---: | ---: | ---: |
+| 20 | 10.4133 | 358652 | 20.10 |
+| 10 | 20.6254 | 359511 | 37.47 |
+| 8 | 25.9535 | 365373 | 3.23 |
+| 6 | 34.4214 | 389591 | 0.10 |
 
-## 已做的整理（面向公开展示）
+### Task 3: Bottom-Up Logic Synthesis
 
-- **`related_lectures/`**（课件、样卷、题库等）已从 Git 跟踪中移除，并写入 `.gitignore`：不增加 clone 体积，也避免公开仓库里出现「考试资料」观感。你本机若仍保留该文件夹，可继续使用，只是不会再被推送到 GitHub。
-- **`command.log`**（根目录与 `syn/`）不再纳入版本库，属可再生成日志。
+| Clock (ns) | Total Power (mW) | Total Cell Area (um^2) | Slack (ps) |
+| --- | ---: | ---: | ---: |
+| 20 | 10.4048 | 363814 | 9.22 |
+| 10 | 20.6061 | 364621 | 8.61 |
+| 8 | 26.8799 | 392192 | 0.12 |
+| 6 | 35.3253 | 394994 | -209.41 |
 
-若你希望连 `PRESENTATION_CRAM_GUIDE.md`、`REEXAM_MAPPING.md` 等明显偏课程备忘的文件也一并隐藏，可自行删除或移到仅本地的备份；当前保留是因为其中仍有流程速查价值，且不影响对外第一印象。
+### Task 4: Logic vs Physical Synthesis Comparison
 
-## 体积说明
+| Stage | Total Power (mW) | Total Cell Area (um^2) | Slack (ps) |
+| --- | ---: | ---: | ---: |
+| Logic Synthesis | 10.4048 | 363814 | 29.24 |
+| Physical Synthesis | 80.4640 | 381986 | -280.85 |
 
-仓库含综合 `db`、`archive` 等较大目录，首次 clone 会较慢；若仅浏览脚本与 RTL，可优先阅读 `FLOW_INDEX.md` 与 `syn/scr/`、`phy/scr/`。
+## Repository Layout
 
-## 克隆与本机开发
+| Path | Purpose |
+| --- | --- |
+| `rtl/` | Main VHDL / Verilog source tree and simulation entry files |
+| `tb/` | Standalone testbench material |
+| `syn/` | Design Compiler scripts, summaries, reports, and handoff databases |
+| `phy/` | Physical-design scripts, screenshots, reports, and evidence |
+| `docs/` | Recruiter-facing documentation, flow index, and interview notes |
+| `assets/` | Presentation decks, project brief PDF, and figures |
+| `references/` | Supporting architecture views, package/interface snapshots, and course-side reference artifacts |
+
+## Recommended Reading Order
+
+1. `docs/FLOW_INDEX.md`
+2. `syn/rpt/summary_tables/task2_flat_summary.md`
+3. `syn/rpt/summary_tables/task3_bottomup_summary.md`
+4. `phy/rpt/task4_historical_summary/README.md`
+5. `docs/resume_project_intro.md`
+
+## How To Run
+
+Run RTL simulation from the repository root:
 
 ```bash
-git clone https://github.com/eiiluwyy-sys/projectv1.git
-cd projectv1
+cd rtl
+./START_SIMULATION.sh
 ```
 
-维护者在本机推送：
+Run synthesis from the repository root:
 
 ```bash
-git remote add origin https://github.com/eiiluwyy-sys/projectv1.git   # 若尚未添加
-git push -u origin main
+./syn/run_synthesis.sh flat 20.0
+./syn/run_synthesis.sh bottomup 20.0
 ```
+
+## Notes
+
+- The repository still contains historical run artifacts because they support traceable explanation in interviews.
+- Some generated synthesis outputs are large; GitHub accepts them but warns about file size.
+- Local scratch outputs such as simulator libraries, transcripts, and temporary logs are ignored where practical via `.gitignore`.
