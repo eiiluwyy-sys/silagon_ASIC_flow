@@ -1,0 +1,5 @@
+clock_ns,total_power_mw,total_cell_area_um2,slack_ps,provenance
+20,10.4048,363814,9.22,ppt_slide_table_extract:slide7.xml
+10,20.6061,364621,8.61,ppt_slide_table_extract:slide7.xml
+8,26.8799,392192,0.12,ppt_slide_table_extract:slide7.xml
+6,35.3253,394994,-209.41,ppt_slide_table_extract:slide7.xml

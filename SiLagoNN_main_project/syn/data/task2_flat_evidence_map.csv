@@ -1,0 +1,5 @@
+clock_ns,summary_power_mw,summary_area_um2,summary_slack_ps,ppt_status,ppt_source,raw_status,raw_report_dir,raw_power_mw,raw_area_um2,raw_slack_ps,gap_note
+20,10.4133,358652,20.10,exact_match,ppt_slide_table_extract:slide4.xml,missing_raw,,,,,No same-clock raw report is preserved in the main workspace.
+10,20.6254,359511,37.47,exact_match,ppt_slide_table_extract:slide4.xml,different_run,syn/archive/task2/from_silagonn_2_task4/rpt_10ns,20.6254,359511.925331,57.47,Closest preserved raw report differs from the PPT/canonical row.
+8,25.9535,365373,3.23,exact_match,ppt_slide_table_extract:slide4.xml,missing_raw,,,,,No same-clock raw report is preserved in the main workspace.
+6,34.4214,389591,0.10,exact_match,ppt_slide_table_extract:slide4.xml,missing_raw,,,,,No same-clock raw report is preserved in the main workspace.

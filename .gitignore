@@ -1,0 +1,33 @@
+# ModelSim / Questa simulation libraries (regenerable)
+SiLagoNN_main_project/rtl/work/
+**/rtl/work/
+
+# Waveform / transcript (local)
+*.wlf
+transcript
+*.vstf
+vsim_stacktrace.vstf
+
+# Synopsys Formality / DC side files (large, regenerable)
+default.svf
+**/default.svf
+
+# Tool / EDA transcript logs (regenerable)
+command.log
+**/command.log
+
+# Course reference PDFs (not part of design flow; keep locally if needed)
+SiLagoNN_main_project/related_lectures/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*~
+
+# Microsoft Office lock files
+~$*
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+.Python

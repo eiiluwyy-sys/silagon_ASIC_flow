@@ -1,0 +1,5 @@
+clock_ns,summary_power_mw,summary_area_um2,summary_slack_ps,ppt_status,ppt_source,raw_status,raw_report_dir,raw_power_mw,raw_area_um2,raw_slack_ps,gap_note
+20,10.4048,363814,9.22,exact_match,ppt_slide_table_extract:slide7.xml,different_run,syn/archive/task3/from_silagonn_1/bottom_20ns,10.4256,351966.351237,9.22,Preserved raw bottom-up row differs from the canonical PPT row.
+10,20.6061,364621,8.61,exact_match,ppt_slide_table_extract:slide7.xml,different_run,syn/archive/task3/from_silagonn_1/bottom_10ns,20.7386,353163.832186,8.61,Preserved raw bottom-up row differs from the canonical PPT row.
+8,26.8799,392192,0.12,exact_match,ppt_slide_table_extract:slide7.xml,different_run,syn/archive/task3/from_silagonn_1/bottom_8ns,26.2196,358531.762879,0.12,Preserved raw bottom-up row differs from the canonical PPT row.
+6,35.3253,394994,-209.41,exact_match,ppt_slide_table_extract:slide7.xml,different_run,syn/archive/task3/from_silagonn_1/bottom_6ns,36.0564,386011.456530,-209.41,Preserved raw bottom-up row differs from the canonical PPT row.

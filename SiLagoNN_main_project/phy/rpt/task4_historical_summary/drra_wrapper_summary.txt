@@ -1,0 +1,7 @@
+Task 4 Flat Physical Synthesis Historical Summary
+=================================================
+Stage, Total Power(mW), Total Cell Area(um^2), Slack(ps)
+Logic Synthesis, 10.4048, 363814, 29.24
+Physical Synthesis, 80.4640, 381986, -280.85
+
+Provenance: historical_team_summary

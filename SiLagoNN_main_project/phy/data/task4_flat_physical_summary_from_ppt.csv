@@ -1,0 +1,3 @@
+stage,total_power_mw,total_cell_area_um2,slack_ps,provenance
+Logic Synthesis,10.4048,363814,29.24,ppt_slide_table_extract:slide11.xml
+Physical Synthesis,80.4640,381986,-280.85,ppt_slide_table_extract:slide11.xml
